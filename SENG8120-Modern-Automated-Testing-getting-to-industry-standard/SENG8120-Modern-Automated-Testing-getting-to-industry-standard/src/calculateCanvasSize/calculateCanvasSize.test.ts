@@ -21,4 +21,16 @@ describe('calculateCanvasSize', () => {
     expect(calculateCanvasSize('10', 'b')).toBeNaN();
     expect(calculateCanvasSize('a', 'b')).toBeNaN();
   });
+
+test('should handle regex values by returning NaN', () => {
+    expect(calculateCanvasSize('/[a-z]/', '100')).toBeNaN();
+    expect(calculateCanvasSize('10', '/[0-9]/')).toBeNaN();
+    expect(calculateCanvasSize('/[a-z]/', '/[0-9]/')).toBeNaN();
+  });
+
+  test('should handle utf16 characters by returning NaN', () => {
+    expect(calculateCanvasSize('\uD83D\uDE00', '100')).toBeNaN();
+    expect(calculateCanvasSize('10', '\uD83D\uDE00')).toBeNaN();
+    expect(calculateCanvasSize('\uD83D\uDE00', '\uD83D\uDE00')).toBeNaN();
+  });
 });
