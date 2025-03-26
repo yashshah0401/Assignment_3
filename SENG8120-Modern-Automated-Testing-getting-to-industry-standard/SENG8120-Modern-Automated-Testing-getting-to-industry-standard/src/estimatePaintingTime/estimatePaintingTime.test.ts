@@ -26,4 +26,10 @@ describe('estimatePaintingTime', () => {
     expect(estimatePaintingTime(100, 'b' as any)).toBeNaN();
     expect(estimatePaintingTime('a' as any, 'b' as any)).toBeNaN();
   });
+
+test('should handle special characters by returning NaN', () => {
+    expect(estimatePaintingTime('@#$%' as any, 10)).toBeNaN();
+    expect(estimatePaintingTime(100, '!&*(' as any)).toBeNaN();
+    expect(estimatePaintingTime('@#$%' as any, '!&*(' as any)).toBeNaN();
+  });
 });

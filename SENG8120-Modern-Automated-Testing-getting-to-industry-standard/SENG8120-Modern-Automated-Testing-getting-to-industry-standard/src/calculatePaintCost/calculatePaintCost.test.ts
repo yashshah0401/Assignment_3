@@ -26,4 +26,10 @@ test('should handle non-numeric inputs by returning NaN', () => {
     expect(calculatePaintCost(10, 'b' as any)).toBeNaN();
     expect(calculatePaintCost('a' as any, 'b' as any)).toBeNaN();
   });
+
+test('should handle special characters by returning NaN', () => {
+    expect(calculatePaintCost('@#$%' as any, 5)).toBeNaN();
+    expect(calculatePaintCost(10, '!&*(' as any)).toBeNaN();
+    expect(calculatePaintCost('@#$%' as any, '!&*(' as any)).toBeNaN();
+  });
 });

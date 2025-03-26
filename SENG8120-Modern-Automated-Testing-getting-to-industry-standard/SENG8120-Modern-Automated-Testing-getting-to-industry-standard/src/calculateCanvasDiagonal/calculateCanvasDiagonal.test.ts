@@ -22,4 +22,16 @@ describe('calculateCanvasDiagonal', () => {
     expect(calculateCanvasDiagonal('3', 'b')).toBeNaN();
     expect(calculateCanvasDiagonal('a', 'b')).toBeNaN();
   });
+
+  test('should handle regex values by returning NaN', () => {
+    expect(calculateCanvasDiagonal('/[a-z]/', '4')).toBeNaN();
+    expect(calculateCanvasDiagonal('3', '/[0-9]/')).toBeNaN();
+    expect(calculateCanvasDiagonal('/[a-z]/', '/[0-9]/')).toBeNaN();
+  });
+
+  test('should handle utf16 characters by returning NaN', () => {
+    expect(calculateCanvasDiagonal('\uD83D\uDE00', '4')).toBeNaN();
+    expect(calculateCanvasDiagonal('3', '\uD83D\uDE00')).toBeNaN();
+    expect(calculateCanvasDiagonal('\uD83D\uDE00', '\uD83D\uDE00')).toBeNaN();
+  });
 });
