@@ -3,7 +3,7 @@ export default function calculateCanvasDiagonal(length: string, width: string): 
   const widthNum = parseFloat(width);
 
   if (isNaN(lengthNum) || isNaN(widthNum)) {
-    throw new Error("Invalid input: length and width must be numbers.");
+    return NaN;
   }
 
   return Math.sqrt(lengthNum ** 2 + widthNum ** 2);

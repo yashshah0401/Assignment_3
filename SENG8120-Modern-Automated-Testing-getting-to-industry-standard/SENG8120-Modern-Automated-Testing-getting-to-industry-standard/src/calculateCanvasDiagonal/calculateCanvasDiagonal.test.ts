@@ -13,7 +13,7 @@ describe('calculateCanvasDiagonal', () => {
 
   test('should handle negative values correctly', () => {
     expect(calculateCanvasDiagonal('-3', '4')).toBeCloseTo(5);
-    expect(calculateCanvasDiagonal('3', '-4')).toBeCloseTo(5);
+    expect(calculateCanvasDiagonal('3', '-4')). toBeCloseTo(5);
     expect(calculateCanvasDiagonal('-3', '-4')).toBeCloseTo(5);
   });
 
