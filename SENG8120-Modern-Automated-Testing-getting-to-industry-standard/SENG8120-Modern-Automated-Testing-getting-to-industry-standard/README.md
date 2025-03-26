@@ -21,6 +21,17 @@ You will need to install dependencies by using:
 ```bash
 npm install
 ```
+## Project Structure
+
+- **calculateCanvasDiagonal**: Contains functions and tests for calculating the diagonal of a canvas.
+- **calculateCanvasPerimeter**: Contains functions and tests for calculating the perimeter of a canvas.
+- **calculateCanvasSize**: Contains functions and tests for calculating the area of a canvas.
+- **calculatePaintCost**: Contains functions and tests for calculating the cost of paint.
+- **calculateTotalCost**: Contains functions and tests for calculating the total cost.
+- **convertAreaToSquareFeet**: Contains functions and tests for converting area to square feet.
+- **estimatePaintingTime**: Contains functions and tests for estimating painting time.
+- **paintRequiredCalculator**: Contains functions and tests for calculating the required paint.
+- **paintRequiredForMultipleCoats**: Contains functions and tests for calculating the paint required for multiple coats.
 
 **Running The Project**
 
