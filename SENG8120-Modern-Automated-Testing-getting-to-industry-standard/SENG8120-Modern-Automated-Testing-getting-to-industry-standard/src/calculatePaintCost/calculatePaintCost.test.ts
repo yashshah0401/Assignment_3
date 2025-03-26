@@ -20,4 +20,10 @@ describe('calculatePaintCost', () => {
     expect(calculatePaintCost(10, -5)).toBe(-50);
     expect(calculatePaintCost(-10, -5)).toBe(50);
   });
+
+test('should handle non-numeric inputs by returning NaN', () => {
+    expect(calculatePaintCost('a' as any, 5)).toBeNaN();
+    expect(calculatePaintCost(10, 'b' as any)).toBeNaN();
+    expect(calculatePaintCost('a' as any, 'b' as any)).toBeNaN();
+  });
 });
